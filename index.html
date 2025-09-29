@@ -1,79 +1,90 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>弟のホームページ</title>
-  <style>
-    body {
-      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
-      background: linear-gradient(to right, #f0f8ff, #e6e6fa);
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #4b0082;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      padding: 30px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      color: #4b0082;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-    .profile, .hobby, .quotes {
-      margin-bottom: 40px;
-    }
-    .quote {
-      background-color: #f9f9f9;
-      border-left: 5px solid #4b0082;
-      padding: 10px;
-      margin: 10px 0;
-      font-style: italic;
-    }
-    footer {
-      background-color: #eee;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下剋上ウォシュレットのホームページ</title>
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+        .title {
+            background-color: rgb(68, 0, 255);
+            color:rgb(255, 255, 255);
+            text-align: center; /* 文字を中央揃えにするCSS */
+            padding-top: 20px;
+        }
+        .text{
+            text-align: center;
+        }
+        .line{
+            border: none;
+            height: 2px;
+            background-color: rgb(56, 56, 56);
+        }
+        .button{
+            background-color:rgb(162, 210, 255);
+            border-radius: 8px;
+            color:black;
+            padding:10px 20px;
+            font-size:15px
+        }
+        .button:hover{
+            padding:13px  23px;
+        }
+        h1 {
+            position: relative;
+            opacity: 0;               /* 最初は透明 */
+            transform: translateY(-20px); /* 少し上から */
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;           /* だんだん表示される */
+                transform: translateY(0); /* 元の位置に戻る */
+            }
+        }
+        .ButtonAndResult{
+            display: flex;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>下剋上ウォシュレットのホームページ</h1>
-    <p>〜自由すぎる天才の記録〜</p>
-  </header>
+    <div class="title">
+        <h1>下剋上ウォシュレットのホームページ</h1>
+    </div>
+    <div class="text">
+        <p>下剋上ウォシュレットのホームページです。<br>
+        ご堪能ください。</p>
+    </div>
+    <br>
+    <h2>下剋上ウォシュレットとは？</h2>
+        <p>下剋上ウォシュレットとは、1000人のメンバーからなる超有名インフルエンサーです(大嘘)</p>
+    <h2>下剋上ウォシュレットのどこが神ですか？</h2>
+        <p>下剋上ウォシュレットのメンバーは全員天才であり、令和のアインシュタインと呼ばれています(大嘘)</p>
+    <h2>下剋上ウォシュレットの閲覧方法</h2>
+        <p><a href="https://www.youtube.com/@gekowosh">下剋上ウォシュレット公式YouTube</a>からいつでも確認できます</p>
+    <hr class="line">
+    <h2>運試ししてみませんか？</h2>
+        <p>このサイトでは、JavaScriptを使って運試しすることができます</p>
 
-  <section class="profile">
-    <h2>プロフィール</h2>
-    <ul>
-      <li><strong>名前：</strong>きよと、厚揚げ、犯罪者など</li>
-      <li><strong>年齢：</strong>13歳（永遠の思春期）</li>
-      <li><strong>特技：</strong>クォリティの高いゴミ動画を作る</li>
-      <li><strong>口癖：</strong>「まあ、なんとかなるっしょ」</li>
-    </ul>
-  </section>
-
-  <section class="hobby">
-    <h2>趣味と才能</h2>
-    <p>岩田くんは毎週クリニックに駆け込んでおり、枕に歯を埋め込むことも。周りの人からはまたミセスグリーンアップル？と言われるがそれでも気にしない。</p>
-  </section>
-
-  <section class="quotes">
-    <h2>岩田語録</h2>
-    <div class="quote">「勉強ってさ、やればできるけど、やらなくてもなんとかなる気がするんだよね」</div>
-    <div class="quote">「このお菓子、食べたらIQ上がる気がする」</div>
-    <div class="quote">「未来の俺はきっとすごい。今は準備期間。」</div>
-  </section>
-
-  <footer>
-    &copy; 2025 下剋上ウォシュレットのホームページ | 管理人より：岩田は手に負えないけど、優しくてかわいい友達です
-  </footer>
+    <!-- 運試し -->
+    <div class="ButtonAndResult">
+        <button class="button" id="JSbutton">運試しする</button>
+        <h2><span id="buttonText"></span></h2>
+    </div>
+    <hr class="line">
+    <h2>最新情報</h2>
+        <p>2025/09/27:「実写版マリオカート」をYouTubeで公開しました(Shorts)</p>
 </body>
 </html>
+<script>
+    let fortune = ["大吉", "中吉", "小吉", "凶"];
+    const btn = document.getElementById("JSbutton");
+    btn.addEventListener("click" , function(){
+        alert("運試しを開始します")
+        document.getElementById("buttonText").innerText = "結果:" + (fortune[Math.floor(Math.random() * fortune.length)]);
+        btn.style.display = "none"
+    });
+</script>
